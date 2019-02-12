@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf8">
+  <!-- <script src="/angular.min.js"></script>
+  <script src="/app.js"></script> -->
+  <title>HTML5 custom browser</title>
+</head>
+
+<body>
+
+  <h2>HTML5 custom browser</h2>
+
+  <div id="target" greeting="Hello" ng-app="My3rdAssignment">
+    <section>Section 1
+      <article>Article 1</article>
+    </section>
+  </div>
+  <script>
+    // var elem = document.getElementById('target');
+    // console.log(elem);
+    // console.log(elem.getAttribute('greeting'));
+    // console.log(elem.getAttribute('ng-app'));
+
+    var elem2 = document.querySelector('[ng-app]');
+    console.log(elem2);
+    console.log(elem2.getAttribute('ng-app'));
+  </script>
+
+</body>
+
+</html>

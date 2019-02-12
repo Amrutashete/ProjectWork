@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="EAIApp">
+
+<head>
+  <meta charset="utf8">
+  <script src="/angular.min.js"></script>
+  <script src="/app.js"></script>
+  <title>Expression and Interpolation</title>
+</head>
+
+<body>
+  <h2>Expression and Interpolation</h2>
+  <div ng-controller='EAIController'>
+    {{message}} has a message for u:
+    <br> {{sayMessage()}}
+    <br>
+    <div>
+      <button ng-click="onFeedDog()">Feed Dog</button>
+      <br>
+      <img ng-src="/images/dog_{{stateOfBeing}}.jpeg">
+    </div>
+  </div>
+
+</body>
+
+</html>
