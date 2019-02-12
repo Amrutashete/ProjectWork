@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf8">
+  <script src="/angular.min.js"></script>
+  <script src="/calculator.js"></script>
+  <style>
+    body {
+      font-size: 1.3em
+    }
+  </style>
+</head>
+
+<body ng-app="nameCalculator">
+  <div ng-controller="nameCalculatorController">
+    <h1>Name calculator</h1>
+    <div>
+      Your Name:
+      <input type="text" ng-model="name" ng-keyup="displayNumeric()">
+    </div>
+    <div>Total numeric value of person's name is: {{totalValue}} 
+    </div>
+  </div>
+</body>
+
+</html>
+ <!-- {{totalValue}} is called interpolation -->

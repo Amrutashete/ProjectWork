@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="NGRApp">
+
+<head>
+  <meta charset="utf8">
+  <script src="/angular.min.js"></script>
+  <script src="/app.js"></script>
+  <style>
+    body {
+      font-size: 1.2em
+    }
+  </style>
+  <title>ng-repeat</title>
+</head>
+
+<body>
+  <h2>The Digest cycle</h2>
+  <div ng-controller='ngRController'>
+    <button ng-click="showNumberOfWatchers()">Log # of Watchers</button>
+    <div>
+      <button ng-click="countOnce()"> click upon once</button>
+      <button ng-click="upCounter()"> Increment counter</button>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
