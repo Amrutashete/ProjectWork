@@ -26,18 +26,18 @@
 
 
 
-  (function () {
+(function () {
 
-    'use strict';
-     
-    var shoppingList = [ "milk", "butter", "cookies", "bread", "spinach", "potato" ,"sessior", "pen", "notbook"];
-  
-    angular.module('FilterArrayApp', [])
-      .controller('FilterArrayController', FilterArrayController);
-  
-      FilterArrayController.inject = ['$scope'];
-    function FilterArrayController($scope) {
-      $scope.shoppingList = shoppingList;
-    };
+  'use strict';
+   
+  var shoppingList = [ "milk", "butter", "cookies", "bread", "spinach", "potato" ,"sessior", "pen", "notbook"];
+
+  angular.module('FilterArrayApp', [])
+    .controller('FilterArrayController', FilterArrayController);
+
+    FilterArrayController.inject = ['$scope'];
+  function FilterArrayController($scope) {
+    $scope.shoppingList = shoppingList;
+  };
 
 })();
