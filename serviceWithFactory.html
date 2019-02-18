@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="CustomServiceApp">
+
+<head>
+  <meta charset="utf8">
+  <script src="/angular.min.js"></script>
+  <script src="/serviceWithFactory.js"></script>
+  <style>
+    body {
+      font-size: 1.2em
+    }
+  </style>
+  <title>Custom services with factory</title>
+</head>
+
+<body>
+  <div id="list1" ng-controller="ShoppingListController1 as list1">
+      <h2>Custom services with factory</h2>
+    <input type="text" ng-model="list1.itemName" placeholder="Item Name">
+    <input type="text" ng-model="list1.itemQuantity" placeholder="Item Quantity">
+    <button ng-click="list1.addItem()">Add Item to List</button>
+    <ol>
+        <li ng-repeat="item in list1.items">
+          {{item.quantity}} as {{item.name}}
+          <button ng-click="list1.removeItem($index)">Remove Item</button>
+        </li>
+      </ol>
+      <div class="error">Error: </div>
+  </div>
+  <div id="list2" ng-controller="ShoppingListController2 as list2">
+      <h2>Custom services with factory with Maxnumber 3</h2>
+      <input type="text" ng-model="list2.itemName" placeholder="Item Name">
+      <input type="text" ng-model="list2.itemQuantity" placeholder="Item Quantity">
+      <button ng-click="list2.addItem()">Add Item to List</button>
+      <ol>
+          <li ng-repeat="item in list2.items">
+            {{item.quantity}} as {{item.name}}
+            <button ng-click="list2.removeItem($index)">Remove Item</button>
+          </li>
+        </ol>
+        <div class="error">Error: {{list2.errorMessage}}</div>
+    </div>
+
+  <!-- <div ng-controller="ShoppingListShowController as showList">
+    <ol>
+      <li ng-repeat="item in showList.items">
+        {{item.quantity}} as {{item.name}}
+        <button ng-click="showList.removeItem()">Remove Item</button>
+      </li>
+    </ol>
+  </div> -->
+
+
+</body>
+
+</html>
