@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="CustomServiceApp">
+
+<head>
+  <meta charset="utf8">
+  <script src="/angular.min.js"></script>
+  <script src="/customService.js"></script>
+  <style>
+    body {
+      font-size: 1.2em
+    }
+  </style>
+  <title>Custom services</title>
+</head>
+
+<body>
+  <h2>Custom services</h2>
+  <div ng-controller="ShoppingListAddController as itemAdder">
+    <input type="text" ng-model="itemAdder.itemName" placeholder="Item Name">
+    <input type="text" ng-model="itemAdder.itemQuantity" placeholder="Item Quantity">
+    <button ng-click="itemAdder.addItem()">Add Item to List</button>
+  </div>
+
+  <div ng-controller="ShoppingListShowController as showList">
+    <ol>
+      <li ng-repeat="item in showList.items">
+        {{item.quantity}} as {{item.name}}
+        <button ng-click="showList.removeItem()">Remove Item</button>
+      </li>
+    </ol>
+  </div>
+
+
+</body>
+
+</html>

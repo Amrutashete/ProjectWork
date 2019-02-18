@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="ControllerAsApp">
+
+<head>
+  <meta charset="utf8">
+  <script src="/angular.min.js"></script>
+  <script src="/multipleController.js"></script>
+  <style>
+    body {
+      font-size: 1.2em
+    }
+  </style>
+  <title>Controller and scope Inheritance</title>
+</head>
+
+<body>
+  <h2>Controller and scope Inheritance</h2>
+  <div ng-controller='ParentController1'>
+    <div ng-controller="childController1"></div>
+   
+  </div>
+
+</body>
+
+</html>

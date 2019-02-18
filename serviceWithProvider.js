@@ -1,4 +1,4 @@
-
+// with ng-if, ng-show and ng-hide
 (function () {
 
   'use strict';
