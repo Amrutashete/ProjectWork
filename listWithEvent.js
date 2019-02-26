@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('ShoppingList', [])
+  angular.module('ShoppingListEventApp', [])
     .controller('ShoppingListController', ShoppingListController)
     .factory('ShoppingListFactory', ShoppingListFactory)
     .service('WeightLossFilterService', WeightLossFilterService)
