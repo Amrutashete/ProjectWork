@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app='SimpleFormsApp'>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/formStyle.css">
+  <script src="lib/angular.min.js"></script>
+  <script src="src/app.js"></script>
+  <title>Simple Form</title>
+</head>
+
+<body ng-controller="RegistrationController as reg">
+  <h1>Simple Form validations</h1>
+  <fieldset>
+    <legend>Registration Form</legend>
+
+    <form name="regForm" novalidate>
+    <input type="text" 
+    placeholder="username" 
+    name="username" 
+    ng-model="reg.user.username" 
+    required minlength="4" 
+    ng-maxlength="10"> 
+    {{reg.user.username}}
+
+    <span ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) 
+      && regForm.username.$touched">
+      Username must be 4 characters long
+    </span>
+
+    <span ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
+      Username must not be biiger than 10 characters
+    </span>
+    <br>
+
+    <input type="text" 
+    placeholder="place an email" 
+    name="email"
+    ng-model="reg.user.email"
+    required
+    >
+    <span ng-if="regForm.email.$inavlid && regForm.email.$touched">
+      must be valid email Id example@domain.com
+    </span>
+    <br>
+
+    <input type="text" 
+    placeholder="Enter number ### ### ####" 
+    name="phone"
+    ng-model="reg.user.phone"
+    pattern="(\d{3})-(\d{3})-(\d{4})"
+    >
+    <span ng-if="regForm.email.$inavlid && regForm.email.$touched">
+      Phone number must be in format ### ### ####
+    </span>
+    <br>
+
+    <button 
+    type="submit"
+    ng-disabled="regForm.$inavlid"
+    ng-click="reg.submit()">
+    Submit Form</button>
+
+  <div style="margin-top: 10px">
+    Form Invalid?? {{regForm.$valid}}
+  </div>
+
+  </form>
+  </fieldset>
+
+  <div id="info" ng-if="reg.completed">
+    <br>
+    Username: {{reg.user.username}}
+    <br>
+    Email Id: {{reg.user.email}}
+    <br>
+    Phone No: {{reg.user.phone}}
+  </div>
+  </body
