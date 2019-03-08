@@ -21,7 +21,26 @@
       })
       .state('public.menu', {
         url: '/menu',
-        templateUrl: "/src/public/menu/menu.html"
+        templateUrl: "/src/public/menu/menu.html",
+        controller: 'MenuController',
+        controllerAs: 'menuCtrl',
+        resolve: {
+          menuCategories: ['MenuService', function(MenuService){
+            return MenuService.getCategories();
+          }]
+        }
+      })
+      .state('public.menuitems',{
+        url: '/menu/{category}',
+        templateUrl : '/src/public/menu-item/menu-item.html',
+        controller: 'MenuItemsController',
+        controllerAs: 'MenuItemsCtrl',
+        resolve: {
+          menuItems: ['$stateParams', 'MenuService', function($stateParams,MenuService){
+            return MenuService.getMenuItem($stateParams.category);
+
+          }]
+        }
       });
   }
   })();
