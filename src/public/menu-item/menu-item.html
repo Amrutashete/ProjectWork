@@ -1,0 +1,12 @@
+<!-- {{ MenuItemsCtrl.menuItems | json}} -->
+
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">{{MenuItemsCtrl.menuItems.category.name}} Menu</h2>
+  <div class="text-center">{{MenuItemsCtrl.menuItems.category.special_instructions}}</div>
+
+
+  <menu-items 
+    ng-repeat="menuItems in MenuItemsCtrl.menuItems.menu_items" 
+    menu-items="menuItems">
+  </menu-items>
+</div>
